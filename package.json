@@ -1,34 +1,35 @@
 {
-  "name": "@hexlet/code",
-  "type": "module",
-  "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/JuSt7483/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/JuSt7483/frontend-project-44/actions)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "brain-games": "./bin/brain-games.js",
-    "brain-even": "./bin/brain-even.js",
-    "brain-calc": "./bin/brain-calc.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JuSt7483/frontend-project-44.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JuSt7483/frontend-project-44/issues"
-  },
-  "homepage": "https://github.com/JuSt7483/frontend-project-44#readme",
-  "dependencies": {
-    "readline-sync": "^1.4.10"
-  },
-  "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jest": "^27.9.0"
-  }
+	"name": "@hexlet/code",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "[![Actions Status](https://github.com/JuSt7483/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/JuSt7483/frontend-project-44/actions)",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"bin": {
+		"brain-games": "bin/brain-games.js",
+		"brain-even": "bin/brain-even.js",
+		"brain-calc": "bin/brain-calc.js",
+    "brain-gcd": "bin/brain-gcd.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JuSt7483/frontend-project-44.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/JuSt7483/frontend-project-44/issues"
+	},
+	"homepage": "https://github.com/JuSt7483/frontend-project-44#readme",
+	"dependencies": {
+		"readline-sync": "^1.4.10"
+	},
+	"devDependencies": {
+		"eslint": "^8.57.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-jest": "^27.9.0"
+	}
 }

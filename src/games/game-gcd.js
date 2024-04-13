@@ -1,11 +1,13 @@
 import getRandomInt from "../randomNum.js";
 import { getAnswerForQuestion } from "../cli.js";
+import getGcd from "../getGcd.js";
 
 export default (rules) => {
   function next() {
-    const randomNumber = getRandomInt(99);
-    const rightAnswer = randomNumber % 2 === 0 ? "yes" : "no";
-    console.log(`Question: ${randomNumber}`);
+    const num1 = getRandomInt(99);
+    const num2 = getRandomInt(99);
+    const rightAnswer = getGcd(num1, num2);
+    console.log(`Question: ${num1} ${num2}`);
     const answer = getAnswerForQuestion("Your answer: ");
 
     rules.check({ answer, rightAnswer }, next);
@@ -13,7 +15,7 @@ export default (rules) => {
 
   return {
     start() {
-      console.log("Answer \"yes\" if the number is even, otherwise answer \"no\".");
+      console.log("Find the greatest common divisor of given numbers.");
       next();
     },
   };

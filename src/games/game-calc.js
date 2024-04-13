@@ -22,7 +22,7 @@ export default (rules) => {
 
   return {
     start() {
-      console.log('What is the result of the expression?');
+      console.log("What is the result of the expression?");
       next();
     },
   };
