@@ -1,38 +1,20 @@
-import readlineSync from "readline-sync";
+import getRandomInt from "../randomNum.js";
+import { getAnswerForQuestion } from "../cli.js";
 
-export default () => {
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-  const userName = readlineSync.question("May I have your name? ");
-  console.log(`Hello, ${userName}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  let i = 0;
-
-  while (i < 3) {
+export default (rules) => {
+  function next() {
     const randomNumber = getRandomInt(99);
-    function getRightAnswer() {
-        let result = "";
-        if (randomNumber % 2 === 1) {
-          result = "no";
-        } else {
-          result = "yes";
-        }
-        return result;
-      }
+    const rightAnswer = randomNumber % 2 === 0 ? "yes" : "no";
     console.log(`Question: ${randomNumber}`);
-    const answer = readlineSync.question("Your answer: ");
-    const rightAnswer = getRightAnswer();
-    if (answer === rightAnswer.toString()) {
-      console.log("Correct!");
-      i++;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      break;
-    }
-  }
-  if (i === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
-};
+    const answer = getAnswerForQuestion("Your answer: ");
+
+		rules.check({ answer, rightAnswer }, next);
+	}
+
+	return {
+		start() {
+			console.log('Answer "yes" if the number is even, otherwise answer "no".');
+			next();
+		},
+	}
+}
