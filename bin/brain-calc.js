@@ -1,4 +1,4 @@
-#!/usr/bin/env node.
+#!/usr/bin/env node
 import game from '../src/games/game-calc.js'
 import rules from '../src/index.js'
 import { getUserName } from '../src/cli.js'
